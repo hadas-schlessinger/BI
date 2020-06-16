@@ -1,4 +1,4 @@
-pyplot==4.8.1
+plotly==4.8.1
 Flask==1.1.1
 Flask-Executor==0.9.3
 funcsigs==1.0.2

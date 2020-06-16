@@ -6,8 +6,8 @@ from .backend import calculatioins
 
 @app.route('/airports', methods=['POST', 'GET'])
 def airports():
-    calculatioins.generate_airports(False)
-    image = _encode_image('app/airports.png')
+    # calculatioins.generate_airports(False)
+    image = _encode_image('static/airports.png')
     return {'data': str(image)}
 
 
@@ -15,7 +15,7 @@ def airports():
 def routes():
     airport = request.form.get('airport')
     destiinations= calculatioins.generate_routes(airport)
-    image = _encode_image('app/routes.png')
+    image = _encode_image('static/routes.png')
     return {'data': str(image),
             'destinations': destiinations,
             'total': len(destiinations)}
@@ -23,8 +23,10 @@ def routes():
 @app.route('/popularity', methods=['POST'])
 def popularity():
     calculatioins.generate_popularity()
-    image = _encode_image('app/airports.png')
-    return {'data': str(image)}
+    image = _encode_image('static/airports.png')
+    image_p = _encode_image('./top_10.png')
+    return {'data': str(image),
+            'priority': str(image_p)}
 
 
 def _encode_image(image):

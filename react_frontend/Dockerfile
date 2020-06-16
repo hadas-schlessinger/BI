@@ -10,8 +10,8 @@ WORKDIR /usr/src/
 
 RUN apk add --no-cache git
 RUN apk add --no-cache openssh
-RUN git clone https://github.com/hadas-schlessinger/BI/frontend.git
-WORKDIR /usr/src/front_end
+RUN git clone https://github.com/hadas-schlessinger/BI_frontend.git
+WORKDIR /usr/src/BI_frontend
 
 
 RUN npm install
