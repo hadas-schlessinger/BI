@@ -1,34 +1,35 @@
 from flask import  render_template, request
 from werkzeug.utils import secure_filename
 from app import app
-import logging
 import sys
 import os
-import pandas as pd
-import json
-import uuid
 import flask_executor
-import threading
-from app.backend import server_tools, tools
-
-UPLOAD_FOLDER = sys.path.append(os.path.join(os.getcwd(), 'cytomod', 'data_files', 'data'))
-ALLOWED_EXTENSIONS = {'xlsx', 'xls'}
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-executor = flask_executor.Executor(app)
-
+from flask import send_file
 
 @app.route('/airports', methods=['POST', 'GET'])
 def airports():
-    return {}
+    try:
+        return send_file('/app/static/react/logo512.png',
+                         attachment_filename='python.jpg')
+    except Exception as e:
+        return str(e)
 
 
 @app.route('/ports', methods=['POST', 'GET'])
 def ports():
-    return {}
+    try:
+        return send_file('/app/static/react/logo512.png',
+                         attachment_filename='python.jpg')
+    except Exception as e:
+        return str(e)
 
 @app.route('/popularity', methods=['POST'])
 def popularity():
-    return {'popularity': 'popularity'}
+    try:
+        return send_file('/app/static/react/logo512.png',
+                         attachment_filename='python.jpg')
+    except Exception as e:
+        return str(e)
 
 
 # @app.route('/generate', methods=['POST'])
