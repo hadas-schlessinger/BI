@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a14449fe-1eff-414a-abf2-623b6b775985" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/backend/calculatioins.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/backend/calculatioins.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose copy.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose copy.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend" beforeDir="false" afterPath="$PROJECT_DIR$/frontend" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/build/favicon.ico" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/build/index.html" afterDir="false" />
@@ -71,6 +69,7 @@
           <entry key="png" value="3" />
           <entry key="py" value="10" />
           <entry key="txt" value="1" />
+          <entry key="yaml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -81,6 +80,7 @@
           <entry key="JavaScript" value="3" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="Python" value="9" />
+          <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -123,7 +123,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/backend/calculatioins.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
@@ -132,6 +132,15 @@
                 <element signature="e#1#32#0" expanded="true" />
                 <marker date="1592341899225" expanded="true" signature="1174:1176" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/docker-compose copy.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="311">
+              <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -166,6 +175,7 @@
         <option value="$PROJECT_DIR$/app/routes.py" />
         <option value="$PROJECT_DIR$/app/requirements.txt" />
         <option value="$PROJECT_DIR$/app/backend/calculatioins.py" />
+        <option value="$PROJECT_DIR$/docker-compose copy.yaml" />
       </list>
     </option>
   </component>
@@ -187,16 +197,6 @@
             <path>
               <item name="BI" type="b2602c69:ProjectViewProjectNode" />
               <item name="BI" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BI" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BI" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BI" type="b2602c69:ProjectViewProjectNode" />
@@ -250,7 +250,7 @@
     <frame x="-1785" y="23" width="1680" height="946" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24954791" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24954791" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -261,7 +261,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.4996986" visible="true" weight="0.44028103" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4996986" visible="true" weight="0.44028103" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50030136" side_tool="true" weight="0.43676814" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -400,6 +400,13 @@
             <element signature="e#1#32#0" expanded="true" />
             <marker date="1592341899225" expanded="true" signature="1174:1176" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose copy.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
         </state>
       </provider>
     </entry>
