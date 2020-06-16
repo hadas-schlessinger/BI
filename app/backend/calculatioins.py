@@ -1,4 +1,3 @@
-
 import matplotlib.pyplot as plt
 import pandas as pd
 import plotly.graph_objects as go
@@ -24,66 +23,6 @@ def generate_airports(calc):
             m.scatter(X, Y, color=color_set[i], s=10, zorder=2)
             i += 1
         plt.savefig('app/airports.png')
-
-
-
-        # latitudes = dataset.loc[:, 'LAT']
-        # longitudes = dataset.loc[:, 'LONG']
-        # countries = dataset['country']
-        # unique_states = countries.unique()
-        # m = folium.Map()
-        # for index, row in dataset.iterrows():
-        #     folium.CircleMarker([[row['LAT'], row['LONG']]],
-        #                         radius=15,
-        #                         popup=row['name'],
-        #                         fill_color="#3db7e4",  # divvy color
-        #                         ).add_to(m)
-        #
-        # ds = dataset[['LAT', 'LONG']].as_matrix()
-        #
-        # # plot heatmap
-        # m.add_children(plugins.HeatMap(ds, radius=15))
-        #
-        #
-        # delay = 5
-        # fn = 'testmap.html'
-        # tmpurl = 'file://{path}/{mapfile}'.format(path=os.getcwd(), mapfile=fn)
-        # m.save(fn)
-        #
-        # browser = webdriver.Firefox()
-        # browser.get(tmpurl)
-        # # Give the map tiles some time to load
-        # time.sleep(delay)
-        # browser.save_screenshot('map.png')
-        # browser.quit()
-
-
-
-        # min_latitude = latitudes.min()
-        # max_latitude = latitudes.max()
-        # min_longitude = longitudes.min()
-        # max_longitude = longitudes.max()
-
-
-        # data_points = [Point(xy) for xy in zip(longitudes, latitudes)]
-        # data_points_unique = data_points.unique()
-        # colormap = matplotlib.cm.rainbow(np.linspace(0, 1, len(data_points_unique)))
-        #
-        # colors = []
-        # for i, state in enumerate(countries):
-        #     colors.append(colormap[np.where(unique_states == state)[0][0]])
-        #
-        # world = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
-        # ax = world.plot(color='lightgrey', linewidth=0.5, edgecolor='black', figsize=(20, 12))
-        #
-        # geo_df = gpd.GeoDataFrame(dataset, crs={'init': 'epsg:4326'}, geometry=data_points)
-        # geo_df.plot(markersize=10, c=colors, ax=ax)
-        #
-        # ax.axis('off')
-        # ax.set_xlim(min_longitude - 10, max_longitude + 10)
-        # ax.set_ylim(min_latitude - 10, max_latitude + 5)
-        # plt.savefig('app/world.jpg')
-
 
 
 def generate_routes(airport):
