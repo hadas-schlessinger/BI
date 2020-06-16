@@ -1,32 +1,12 @@
-from matplotlib.cm import viridis
-from matplotlib.colors import to_hex
-import matplotlib.cm
-import pandas as pd
-import gmaps
-import gmaps.datasets
-import gmaps.geojson_geometries
-import gmplot
-import numpy as np
-import geopandas as gpd
-import descartes
-from shapely.geometry import Point
+
 import matplotlib.pyplot as plt
-import folium
-from folium import plugins
 import pandas as pd
-import matplotlib.pyplot as plt
-from mpl_toolkits.basemap import Basemap
-import seaborn as sns
-import os
-import subprocess
-import time
-from selenium import webdriver
+import plotly.graph_objects as go
 
 
-def generate_airports():
-    try:
+def generate_airports(calc):
+    if calc:
         airport = pd.read_excel('app/flights_data.xlsx', 'airports')
-        airport.head()
         color_set = ["#5DADE2", "#F1C40F", "#E74C3C", "#3D3228", "#ECF0F1", "#73FF5B"]
         zones = airport['General_Time_Zone']
         unique_zones = zones.unique()
@@ -44,8 +24,7 @@ def generate_airports():
             m.scatter(X, Y, color=color_set[i], s=10, zorder=2)
             i += 1
         plt.savefig('app/airports.png')
-    except Exception  as e:
-        print(e)
+
 
 
         # latitudes = dataset.loc[:, 'LAT']
@@ -104,16 +83,40 @@ def generate_airports():
         # ax.set_xlim(min_longitude - 10, max_longitude + 10)
         # ax.set_ylim(min_latitude - 10, max_latitude + 5)
         # plt.savefig('app/world.jpg')
-    except Exception  as e:
-        print(e)
 
 
 
-
-def generate_routes():
-    pass
+def generate_routes(airport):
+    routes = pd.read_excel('app/flights_data.xlsx', 'routes')
+    routes = pd.DataFrame(routes)
+    return list(_filter(airport, routes))
 
 
 def generate_popularity():
-    pass
+    print('executing')
+    routes = pd.read_excel('app/flights_data.xlsx', 'routes')
+    routes = pd.DataFrame(routes)
+    airports = routes['From'].unique()
 
+    common_routes = []
+
+    for airport in airports:
+        common_routes.append(len(list(_filter(airport, routes))))
+
+    top_10_len = sorted(range(len(common_routes)), key=lambda i: common_routes[i])[-10:]
+    airports = airports[top_10_len]
+    lengths = []
+    for index in top_10_len:
+        lengths.append(common_routes[index])
+
+    fig = go.Figure(
+        data=[go.Bar(x=airports, y=lengths)],
+        layout=dict(title=dict(text="Top 10 airports"))
+    )
+
+    fig.show()
+
+
+def _filter(airport, routes):
+    filter = routes.loc[lambda df: df.From == airport]
+    return filter.loc[:, 'To']

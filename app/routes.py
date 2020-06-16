@@ -1,33 +1,32 @@
-from flask import  render_template, request
-from werkzeug.utils import secure_filename
-from app import app
 import base64
+
+from flask import request
+
+from app import app
 from .backend import calculatioins
-import threading
+
 
 @app.route('/airports', methods=['POST', 'GET'])
 def airports():
-    # method = threading.Thread(target=calculatioins.generate_airports())
-    # method.daemon = True
-    # method.start()
-
-    calculatioins.generate_airports()
-    image = _encode_image('app/world.jpg')
+    calculatioins.generate_airports(False)
+    image = _encode_image('app/airports.png')
     return {'data': str(image)}
 
 
 @app.route('/routes', methods=['POST', 'GET'])
 def routes():
-    calculatioins.generate_routes()
-    image = _encode_image('app/static/react/logo192.png')
-    return {'data': str(image)}
+    airport = request.form.get('airport')
+    destiinations= calculatioins.generate_routes(airport)
+    image = _encode_image('app/routes.png')
+    return {'data': str(image),
+            'destinations': destiinations,
+            'total': len(destiinations)}
 
 @app.route('/popularity', methods=['POST'])
 def popularity():
     calculatioins.generate_popularity()
-    image = _encode_image('app/static/react/logo192.png')
+    image = _encode_image('app/airports.png')
     return {'data': str(image)}
-
 
 
 def _encode_image(image):
