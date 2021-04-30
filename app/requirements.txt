@@ -62,7 +62,7 @@ statsmodels==0.11.1
 statsmodels==0.11.1
 termcolor==1.1.0
 tqdm==4.41.1
-urllib3==1.25.7
+urllib3==1.25.8
 wcwidth==0.1.8
 websocket-client==0.54.0
 Werkzeug==0.16.0
